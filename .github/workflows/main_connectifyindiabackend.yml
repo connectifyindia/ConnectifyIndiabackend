@@ -61,3 +61,24 @@ jobs:
           app-name: 'ConnectifyIndiaBackend'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_4F0978F090B74E6EAF73535861D1CD1C }}
+
+name:'Delete old artifacts'
+
+on:
+push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    branches:
+      - main
+      - develop
+
+jobs:
+  delete-artifacts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: kolpav/purge-artifacts-action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          expire-in: 0days
