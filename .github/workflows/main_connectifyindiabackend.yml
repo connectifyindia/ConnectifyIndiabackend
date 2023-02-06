@@ -61,3 +61,20 @@ jobs:
           app-name: 'ConnectifyIndiaBackend'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_93D25230E0394DBAA3EF8C9786464CD5 }}
+      - name: Delete Old Artifacts
+        uses: actions/github-script@v6
+        id: artifact
+        with:
+         script: |
+          const res = await github.rest.actions.listArtifactsForRepo({
+          owner: context.repo.owner,
+          repo: context.repo.repo,
+          })
+           res.data.artifacts
+           .forEach(({ id }) => {
+             github.rest.actions.deleteArtifact({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              artifact_id: id,
+              })
+          })
