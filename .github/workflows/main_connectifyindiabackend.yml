@@ -52,15 +52,8 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: python-app
-          path: .
+          path: 
           
-      - name: 'Deploy to Azure Web App'
-        uses: azure/webapps-deploy@v2
-        id: deploy-to-webapp
-        with:
-          app-name: 'ConnectifyIndiaBackend'
-          slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_B9E73909DF564DAEA2352046DB2D15E7 }}
       - name: Delete Old Artifacts
         uses: actions/github-script@v6
         id: artifact
@@ -78,6 +71,13 @@ jobs:
               repo:context.repo.repo,
               artifact_id:id,
             })
-           })
-
-   
+           }).
+          
+      - name: 'Deploy to Azure Web App'
+        uses: azure/webapps-deploy@v2
+        id: deploy-to-webapp
+        with:
+          app-name: 'ConnectifyIndiaBackend'
+          slot-name: 'Production'
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_B9E73909DF564DAEA2352046DB2D15E7 }}
+      
