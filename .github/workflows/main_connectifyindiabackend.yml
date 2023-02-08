@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'ConnectifyIndiaBackend'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_DC15DA90DA4E4A748B871B1B5F865DD1 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_12F96A184E874460B9CF08113480C4E9 }}
