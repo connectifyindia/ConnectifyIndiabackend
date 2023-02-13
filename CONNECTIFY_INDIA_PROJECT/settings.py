@@ -65,6 +65,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:8080",
     "http://127.0.0.1:8080",
     "http://127.0.0.1:5463",
+    "https://connectifyindiabackend.azurewebsites.net",
 ]
 
 ROOT_URLCONF = 'CONNECTIFY_INDIA_PROJECT.urls'
@@ -91,23 +92,23 @@ WSGI_APPLICATION = 'CONNECTIFY_INDIA_PROJECT.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME':'connectify_india_db',
-#         'USER':'root',
-#         'PASSWORD':'root',
-
-
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+
+DATABASES = {
+    'default': {
+        'ENGINE':'django.db.backends.mysql',
+        'NAME':'connectify_india_db',
+        'USER':'root',
+        'PASSWORD':'root',
+
+
+    }
+}
 
 
 
