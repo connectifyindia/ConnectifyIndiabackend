@@ -99,15 +99,27 @@ WSGI_APPLICATION = 'CONNECTIFY_INDIA_PROJECT.wsgi.application'
 #     }
 # }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE':'django.db.backends.mysql',
+#         'NAME':'connectify_india_db',
+#         'USER':'root',
+#         'PASSWORD':'root',
+
+
+#     }
+# }
+
 DATABASES = {
     'default': {
         'ENGINE':'django.db.backends.mysql',
         'NAME':'connectify_india_db',
-        'USER':'root',
-        'PASSWORD':'root',
-
-
-    }
+        'USER':'azlogin',
+        'PASSWORD':'P@ssw0rd@2022',
+        'PORT':'3306',
+        'HOST':'connectifyindiamysqldb.mysql.database.azure.com',
+        
+}
 }
 
 

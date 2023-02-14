@@ -1,6 +1,5 @@
 asgiref==3.5.2
 certifi==2022.12.7
-Cython==0.29.33
 distlib==0.3.6
 Django==4.1.6
 django-ckeditor==6.5.1
@@ -9,7 +8,6 @@ django-js-asset==2.0.0
 djangorestframework==3.14.0
 filelock==3.9.0
 mysqlclient==2.1.1
-pipenv==2023.2.4
 platformdirs==3.0.0
 protobuf==3.20.3
 PyMySQL==1.0.2
