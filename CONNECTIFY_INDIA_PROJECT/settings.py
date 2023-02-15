@@ -92,12 +92,17 @@ WSGI_APPLICATION = 'CONNECTIFY_INDIA_PROJECT.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': BASE_DIR / 'db.sqlite3',
+        # 'NAME':'connectify_india_db',
+        # 'USER':'azlogin',
+        # 'PASSWORD':'P@ssw0rd@2022',
+        # 'PORT':'3306',
+        # 'HOST':'connectifyindiamysqldb.mysql.database.azure.com',
+    }
+}
 
 # DATABASES = {
 #     'default': {
